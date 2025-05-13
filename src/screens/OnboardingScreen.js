@@ -10,7 +10,7 @@ export default function OnboardingScreen() {
     <View style={styles.container}>
       <View style={styles.videoContainer}>
         <Video
-          source={require('../assets/videos/fossil-intro.mp4')} // ajuste o nome se for diferente
+          source={require('../assets/videos/fossil-intro.mp4')} // ajuste o caminho se necessário
           style={styles.video}
           shouldPlay
           isLooping
@@ -33,7 +33,7 @@ export default function OnboardingScreen() {
 
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate('Home')} // substitua "Home" pela tela desejada
+          onPress={() => navigation.navigate('Home')} // troque "Home" se necessário
         >
           <Text style={styles.buttonText}>Get Started</Text>
         </TouchableOpacity>
@@ -53,8 +53,9 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   video: {
-    width: '120%',
-    height: '120%',
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,
@@ -78,7 +79,7 @@ const styles = StyleSheet.create({
     marginBottom: 32,
   },
   button: {
-    backgroundColor: '#8B5E3C', 
+    backgroundColor: '#8B5E3C',
     paddingVertical: 14,
     borderRadius: 30,
     alignItems: 'center',
