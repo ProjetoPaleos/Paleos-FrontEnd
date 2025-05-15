@@ -35,7 +35,8 @@ export default function OnboardingScreen() {
           style={styles.button}
           onPress={() => navigation.navigate('Home')} // troque "Home" se necessário
         >
-          <Text style={styles.buttonText}>Get Started</Text>
+          <Text style={styles.buttonText}>Nada e nem ninguém irá nos deter!
+</Text>
         </TouchableOpacity>
       </View>
     </View>
