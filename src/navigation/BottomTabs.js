@@ -33,7 +33,7 @@ export default function BottomTabs() {
           const size = 24;
 
           switch (route.name) {
-            case 'HomeTab':
+            case 'Home':
               return <HomeIcon width={size} height={size} fill={color} />;
             case 'Marinhos':
               return <MarinhosIcon width={size} height={size} fill={color} />;
@@ -49,7 +49,7 @@ export default function BottomTabs() {
         tabBarInactiveTintColor: '#ccc',
       })}
     >
-      <Tab.Screen name="HomeTab" component={HomeScreen} />
+      <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Marinhos" component={MarinhosScreen} />
       <Tab.Screen name="Terrestres" component={TerrestresScreen} />
       <Tab.Screen name="Aereos" component={AereosScreen} />
