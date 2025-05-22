@@ -70,8 +70,8 @@ src
 1. Clone o repositório:
 
 ```bash
-git clone <url-do-repositório>
-cd paleos
+git clone https://github.com/ProjetoPaleos/Paleos-FrontEnd.git
+cd Paleos-FrontEnd
 ```
 
 2. Instale as dependências:
