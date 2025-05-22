@@ -1,5 +1,6 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { View } from 'react-native';
 
 import HomeScreen from '../screens/HomeScreen';
 import MarinhosScreen from '../screens/MarinhosScreen';
@@ -32,15 +33,37 @@ export default function BottomTabs() {
           const color = focused ? '#704f2c' : '#ccc';
           const size = 24;
 
+          const IconWrapper = ({ children }) => (
+            <View style={{ width: size, height: size }}>
+              {children}
+            </View>
+          );
+
           switch (route.name) {
             case 'Home':
-              return <HomeIcon width={size} height={size} fill={color} />;
+              return (
+                <IconWrapper>
+                  <HomeIcon />
+                </IconWrapper>
+              );
             case 'Marinhos':
-              return <MarinhosIcon width={size} height={size} fill={color} />;
+              return (
+                <IconWrapper>
+                  <MarinhosIcon />
+                </IconWrapper>
+              );
             case 'Terrestres':
-              return <TerrestresIcon width={size} height={size} fill={color} />;
+              return (
+                <IconWrapper>
+                  <TerrestresIcon />
+                </IconWrapper>
+              );
             case 'Aereos':
-              return <AereosIcon width={size} height={size} fill={color} />;
+              return (
+                <IconWrapper>
+                  <AereosIcon />
+                </IconWrapper>
+              );
             default:
               return null;
           }
