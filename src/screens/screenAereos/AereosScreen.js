@@ -9,21 +9,22 @@ import {
   TextInput,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import api from '../service/api';
-import CardFossilMarinho from '../components/CardFossilMarinho';
+import api from '../../service/api';
+import CardFossilMarinho from '../../components/CardFossilMarinho';
 import { useFocusEffect } from '@react-navigation/native';
 
-export default function MarinhosScreen({ navigation }) {
+export default function AereosScreen({ navigation }) {
   const [fosseis, setFosseis] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState('');
 
   const fetchFosseis = async () => {
     setLoading(true);
     try {
-      const response = await api.get('/aquatico');
+      const response = await api.get('/aereo');
       setFosseis(response.data);
     } catch (error) {
-      console.error('Erro ao buscar fósseis marinhos:', error);
+      console.error('Erro ao buscar fósseis aereos:', error);
     }
     setLoading(false);
   };
@@ -34,11 +35,15 @@ export default function MarinhosScreen({ navigation }) {
     }, [])
   );
 
+  const filteredFosseis = fosseis.filter((fossil) =>
+    fossil.nome.toLowerCase().includes(search.toLowerCase())
+  );
+
   const renderItem = ({ item }) => (
     <CardFossilMarinho
       nome={item.nome}
       imagemBase64={item.imagemBase64}
-      onPress={() => navigation.navigate('ViewDetails', { id: item.id })}
+      onPress={() => navigation.navigate('ViewDetailsAereo', { id: item.id })}
     />
   );
 
@@ -54,8 +59,8 @@ export default function MarinhosScreen({ navigation }) {
     <View style={styles.container}>
       {/* Cabeçalho */}
       <View style={styles.header}>
-        <Text style={styles.titulo}>Fóseis marinhos</Text>
-        <TouchableOpacity onPress={() => navigation.navigate('AddScreen')}>
+        <Text style={styles.titulo}>Fósseis aereos</Text>
+        <TouchableOpacity onPress={() => navigation.navigate('AddScreenAereo')}>
           <Ionicons name="add-circle" size={28} color="#62442B" />
         </TouchableOpacity>
       </View>
@@ -67,20 +72,24 @@ export default function MarinhosScreen({ navigation }) {
           placeholder="Procure os fósseis..."
           placeholderTextColor="#aaa"
           style={styles.searchInput}
+          value={search}
+          onChangeText={setSearch}
         />
-        <TouchableOpacity style={styles.filterButton}>
-          <Ionicons name="options-outline" size={20} color="#62442B" />
-        </TouchableOpacity>
       </View>
 
       {/* Lista */}
       <FlatList
-        data={fosseis}
+        data={filteredFosseis}
         keyExtractor={(item) => item.id.toString()}
         renderItem={renderItem}
         numColumns={2}
         contentContainerStyle={styles.list}
         columnWrapperStyle={{ justifyContent: 'space-between' }}
+        ListEmptyComponent={() => (
+          <Text style={{ textAlign: 'center', marginTop: 20, color: '#999' }}>
+            Nenhum fóssil encontrado.
+          </Text>
+        )}
       />
     </View>
   );
@@ -117,9 +126,6 @@ const styles = StyleSheet.create({
     flex: 1,
     marginLeft: 8,
     color: '#000',
-  },
-  filterButton: {
-    marginLeft: 8,
   },
   list: {
     paddingBottom: 100,

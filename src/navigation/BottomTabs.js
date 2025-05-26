@@ -3,9 +3,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { View } from 'react-native';
 
 import HomeScreen from '../screens/HomeScreen';
-import MarinhosScreen from '../screens/MarinhosScreen';
-import TerrestresScreen from '../screens/TerrestresScreen';
-import AereosScreen from '../screens/AereosScreen';
+import MarinhosScreen from '../screens/screensMarinhos/MarinhosScreen';
+import TerrestresScreen from '../screens/ScreenTerrestres/TerrestresScreen';
+import AereosScreen from '../screens/screenAereos/AereosScreen';
 
 import HomeIcon from '../assets/svgs/home.svg';
 import MarinhosIcon from '../assets/svgs/marinhos.svg';

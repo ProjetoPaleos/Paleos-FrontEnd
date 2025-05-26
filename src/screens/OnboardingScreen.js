@@ -33,7 +33,7 @@ export default function OnboardingScreen() {
 
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate('Home')} // troque "Home" se necessário
+          onPress={() => navigation.navigate('MainTabs', { screen: 'Home' })}
         >
           <Text style={styles.buttonText}>Nada e nem ninguém irá nos deter!
 </Text>
