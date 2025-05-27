@@ -27,7 +27,6 @@ export default function HomeScreen() {
     }
   };
 
-  // ✅ Agora, atualiza sempre que Home for focada:
   useFocusEffect(
     useCallback(() => {
       fetchFosseis();
@@ -80,7 +79,7 @@ export default function HomeScreen() {
 
       <View style={styles.sectionTitle}>
         <Text style={styles.sectionText}>Em destaque</Text>
-        <FireIcon width={18} height={18} style={{ marginLeft: 4 }} />
+        <FireIcon width={16} height={16} style={{ marginLeft: 8 }} />
       </View>
 
       <FlatList
@@ -121,12 +120,14 @@ const styles = StyleSheet.create({
   sectionTitle: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'flex-start',
     marginBottom: 14,
   },
   sectionText: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: 'bold',
     color: '#1E1610',
+    flexShrink: 1,
   },
   card: {
     backgroundColor: '#fff',

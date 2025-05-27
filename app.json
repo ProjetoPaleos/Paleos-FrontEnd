@@ -4,11 +4,11 @@
     "slug": "paleos",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/dino.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/dino.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -17,13 +17,19 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/dino.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.baleiaxl.paleos"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/dino.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a68ae638-4fa2-4228-b633-8d0384562dc9"
+      }
     }
   }
 }
