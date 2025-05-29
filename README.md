@@ -10,15 +10,27 @@ Conta com navegação entre diversas telas e consumo de uma API via **Axios**.
 ## 🚀 Tecnologias Utilizadas
 
 - **React Native** `0.79.2`
+- **React** `19.0.0`
 - **Expo** `~53.0.9`
 - **React Navigation**:
-  - `@react-navigation/native`
-  - `@react-navigation/native-stack`
-  - `@react-navigation/bottom-tabs`
-- **Axios** para consumo de API
-- **Expo Modules**: `expo-av`, `expo-file-system`, `expo-image-picker`, `expo-status-bar`
-- **React Native SVG**
-
+  - `@react-navigation/native` `^7.1.9`
+  - `@react-navigation/native-stack` `^7.3.13`
+  - `@react-navigation/bottom-tabs` `^7.3.13`
+- **Axios** `^1.9.0`
+- **Expo Modules**:
+  - `expo-av` `~15.1.4`
+  - `expo-file-system` `~18.1.10`
+  - `expo-image-picker` `~16.1.4`
+  - `expo-status-bar` `~2.2.3`
+- **React Native Gesture Handler** `~2.24.0`
+- **React Native Reanimated** `^3.17.5`
+- **React Native Safe Area Context** `^5.4.0`
+- **React Native Screens** `~4.10.0`
+- **React Native SVG** `^15.12.0`
+- **React Native SVG Transformer** (dev) `^1.5.1`
+- **React Native Web** `^0.20.0`
+- **Ngrok** (dev) `^5.0.0-beta.2`
+- **Babel Core** (dev) `^7.20.0`
 ---
 
 ## 📂 Estrutura de Pastas
@@ -30,19 +42,32 @@ src
 │   └── videos
 │
 ├── components
-│   └── CardFossilMarinho.js
+│   ├── CardFossilMarinho.js
+│   └── ConfirmDeleteModal.js
 │
 ├── navigation
 │   └── BottomTabs.js
 │
 ├── screens
-│   ├── AddScreen.js
-│   ├── AereosScreen.js
-│   ├── HomeScreen.js
-│   ├── MarinhosScreen.js
-│   ├── OnboardingScreen.js
-│   ├── TerrestresScreen.js
-│   └── ViewDetailsScreen.jsx
+│   ├── screenAereos
+│   │   ├── AddScreenAereo.js
+│   │   ├── AereosScreen.js
+│   │   ├── EditScreenAereo.js
+│   │   └── ViewDetailsScreen.jsx
+│   │
+│   ├── screensMarinhos
+│   │   ├── AddScreenMarinho.js
+│   │   ├── EditScreen.js
+│   │   ├── MarinhosScreen.js
+│   │   └── ViewDetailsScreen.jsx
+│   │
+│   ├── ScreenTerrestres
+│   │   ├── AddScreenTerrestre.js
+│   │   ├── EditscreenTerrestre.js
+│   │   ├── TerrestresScreen.js
+│   │   ├── ViewDetailsScreenTerrestres.jsx
+│   │   ├── HomeScreen.jsx
+│   │   └── OnboardingScreen.js
 │
 └── service
     └── api.jsx
@@ -52,6 +77,7 @@ src
 ├── app.json
 ├── index.js
 └── .gitignore
+
 ```
 
 ---
