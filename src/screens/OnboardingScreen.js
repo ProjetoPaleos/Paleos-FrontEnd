@@ -28,7 +28,7 @@ export default function OnboardingScreen() {
           vamos misturar
         </Text>
         <Text style={styles.subtitle}>
-          O melhor site de coleção de fósseis do Brasil
+          O melhor aplicativo de coleção de fósseis do Brasil
         </Text>
 
         <TouchableOpacity
